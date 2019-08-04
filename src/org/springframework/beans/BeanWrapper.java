@@ -19,25 +19,22 @@ package org.springframework.beans;
 import java.beans.PropertyDescriptor;
 
 /**
- * The central interface of Spring's low-level JavaBeans infrastructure.
- * Extends the {@link PropertyAccessor} and {@link PropertyEditorRegistry} interfaces.
+ * Spring的低级JavaBeans基础设施的中央接口。
+ * 扩展@link propertyaccessor和@link propertyeditorregistry接口。
  *
- * <p>Typically not used directly but rather implicitly via a
+ * <p>通常不直接使用，而是通过
  * {@link org.springframework.beans.factory.BeanFactory} or a
  * {@link org.springframework.validation.DataBinder}.
  *
- * <p>Provides operations to analyze and manipulate standard JavaBeans:
- * the ability to get and set property values (individually or in bulk),
- * get property descriptors, and query the readability/writability of properties.
+ * <p>提供分析和操作标准JavaBeans的操作:
+ * 获取和设置属性值（单独或批量）的能力,
+ * 获取属性描述符，并查询属性的可读性/可写性.
  *
- * <p>This interface supports <b>nested properties</b> enabling the setting
- * of properties on subproperties to an unlimited depth.
- * A <code>BeanWrapper</code> instance can be used repeatedly, with its
- * {@link #setWrappedInstance(Object) target object} (the wrapped JavaBean
- * instance) changing as required.
+ * <p>此接口支持启用设置子属性的属性的深度不受限制
+ * A <code>BeanWrapper</code> 可以重复使用, with its
+ * {@link #setWrappedInstance(Object) target object} (包装的javaBean实例）根据需要更改
  *
- * <p>A BeanWrapper instance can be used repeatedly, with its target object
- * (the wrapped Java Bean instance) changing.
+ * <p>可以重复使用beanwrapper实例及其目标对象, （封装的JavaBean实例）更改
  * 
  * @author Rod Johnson
  * @author Juergen Hoeller

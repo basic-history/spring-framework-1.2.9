@@ -21,15 +21,10 @@ import java.io.Serializable;
 import org.springframework.util.ObjectUtils;
 
 /**
- * Class to hold information and value for an individual property.
- * Using an object here, rather than just storing all properties in a
- * map keyed by property name, allows for more flexibility, and the
- * ability to handle indexed properties etc in a special way if necessary.
- *
- * <p>Note that the value doesn't need to be the final required type:
- * A BeanWrapper implementation should handle any necessary conversion, as
- * this object doesn't know anything about the objects it will be applied to.
- *
+ * 
+ * 类来保存单个属性的信息和值。在此处使用对象，而不仅仅是将所有属性存储在按属性名称键控的映射，允许更大的灵活性，并且如有必要，能够以特殊方式处理索引属性等。
+ *<p>请注意，该值不需要是最终所需的类型：beanwrapper实现应该处理任何必要的转换，如此对象不知道它将应用到的对象的任何信息。
+ * 
  * @author Rod Johnson
  * @since 13 May 2001
  * @see PropertyValues
@@ -41,11 +36,13 @@ public class PropertyValue implements Serializable {
 
 	private final Object value;
 
-
 	/**
 	 * Create a new PropertyValue instance.
-	 * @param name name of the property
-	 * @param value value of the property (possibly before type conversion)
+	 * 
+	 * @param name
+	 *            name of the property
+	 * @param value
+	 *            value of the property (possibly before type conversion)
 	 */
 	public PropertyValue(String name, Object value) {
 		if (name == null) {
@@ -54,7 +51,6 @@ public class PropertyValue implements Serializable {
 		this.name = name;
 		this.value = value;
 	}
-
 
 	/**
 	 * Return the name of the property.
@@ -65,14 +61,14 @@ public class PropertyValue implements Serializable {
 
 	/**
 	 * Return the value of the property.
-	 * <p>Note that type conversion will <i>not</i> have occurred here.
-	 * It is the responsibility of the BeanWrapper implementation to
-	 * perform type conversion.
+	 * <p>
+	 * Note that type conversion will <i>not</i> have occurred here. It is the
+	 * responsibility of the BeanWrapper implementation to perform type
+	 * conversion.
 	 */
 	public Object getValue() {
 		return value;
 	}
-
 
 	public boolean equals(Object other) {
 		if (this == other) {
